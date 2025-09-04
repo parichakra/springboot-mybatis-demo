@@ -29,28 +29,6 @@ This project is a simple **Spring Boot** application demonstrating CRUD operatio
 
 ---
 
-src/
-├─ main/
-│ ├─ java/
-│ │ └─ com/parichakra/mybatis/
-│ │ ├─ controller/
-│ │ │ └─ AppUserController.java
-│ │ ├─ service/
-│ │ │ └─ AppUserService.java
-│ │ ├─ mapper/
-│ │ │ └─ AppUserMapper.java
-│ │ └─ model/
-│ │ └─ AppUser.java
-│ └─ resources/
-│ ├─ application.yml
-│ └─ mapper/
-│ └─ AppUserMapper.xml
-└─ test/
-
-
-
----
-
 ## Configuration
 
 **H2 Database and MyBatis configuration** is in `application.yml`:

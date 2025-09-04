@@ -65,12 +65,12 @@ git clone https://github.com/parichakra/springboot-mybatis-demo.git
 ```
 
 
-2. **Build and run using gradle
+2. **Build and run using gradle**
    ```bash
    ./gradlew clean build
    ./gradlew bootRun
    ```
-3. Access the application:
+3. **Access the application:**
 
 The application runs at: http://localhost:8080
 

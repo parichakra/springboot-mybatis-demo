@@ -3,32 +3,32 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.demo.mapper.AppUserMapper">
+<mapper namespace="com.parichakra.mybatis.mapper.AppUserMapper">
 
-    <resultMap id="userResultMap" type="com.example.demo.model.AppUser">
+    <resultMap id="userResultMap" type="com.parichakra.mybatis.model.AppUser">
         <id property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="email" column="email"/>
     </resultMap>
 
     <select id="findAll" resultMap="userResultMap">
-        SELECT * FROM app_users;
+        SELECT id, username, email FROM app_users
     </select>
 
     <select id="findById" parameterType="long" resultMap="userResultMap">
-        SELECT * FROM app_users WHERE id = #{id};
+        SELECT id, username, email FROM app_users WHERE id=#{id}
     </select>
 
-    <insert id="insert" parameterType="com.example.demo.model.AppUser" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO app_users (username, email)
-        VALUES (#{username}, #{email});
+    <insert id="insert" parameterType="com.parichakra.mybatis.model.AppUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO app_users (username, email) VALUES (#{username}, #{email})
     </insert>
 
-    <update id="update" parameterType="com.example.demo.model.AppUser">
-        UPDATE app_users SET username=#{username}, email=#{email} WHERE id=#{id};
+    <update id="update" parameterType="com.parichakra.mybatis.model.AppUser">
+        UPDATE app_users SET username=#{username}, email=#{email} WHERE id=#{id}
     </update>
 
     <delete id="delete" parameterType="long">
-        DELETE FROM app_users WHERE id=#{id};
+        DELETE FROM app_users WHERE id=#{id}
     </delete>
+
 </mapper>

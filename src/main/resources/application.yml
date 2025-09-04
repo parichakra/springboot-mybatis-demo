@@ -1,18 +1,20 @@
 spring:
   application:
-    name:
-      springboot-mybatis-demo
+    name: springboot-mybatis-demo
+
   datasource:
     url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
     username: sa
     password:
+
   h2:
     console:
       enabled: true
-  mybatis:
-    mapper-locations: classpath:mapper/*.xml
-    type-aliases-package: com.example.demo.model
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.parichakra.mybatis.model
 
 server:
   port: 8080

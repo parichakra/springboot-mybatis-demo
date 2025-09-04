@@ -3,16 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.demo.mapper.EmployeeMapper">
+<mapper namespace="com.parichakra.mybatis.mapper.EmployeeMapper">
 
-    <resultMap id="employeeResultMap" type="com.example.demo.model.Employee">
+    <resultMap id="employeeResultMap" type="com.parichakra.mybatis.mapper.EmployeeMapper">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="role" column="role"/>
         <result property="salary" column="salary"/>
 
         <!-- JOIN mapping -->
-        <association property="appUser" javaType="com.example.demo.model.AppUser">
+        <association property="appUser" javaType="com.parichakra.mybatis.mapper.EmployeeMapper">
             <id property="id" column="user_id"/>
             <result property="username" column="username"/>
             <result property="email" column="email"/>
@@ -34,12 +34,12 @@
         WHERE e.id = #{id};
     </select>
 
-    <insert id="insert" parameterType="com.example.demo.model.Employee" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insert" parameterType="com.parichakra.mybatis.mapper.EmployeeMapper" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO employees (name, role, salary, user_id)
         VALUES (#{name}, #{role}, #{salary}, #{appUser.id});
     </insert>
 
-    <update id="update" parameterType="com.example.demo.model.Employee">
+    <update id="update" parameterType="com.parichakra.mybatis.model.Employee">
         UPDATE employees
         SET name=#{name}, role=#{role}, salary=#{salary}, user_id=#{appUser.id}
         WHERE id=#{id};

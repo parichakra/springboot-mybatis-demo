@@ -1,9 +1,7 @@
 package com.parichakra.mybatis.mapper;
 
 import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
-
 import com.parichakra.mybatis.model.Employee;
 
 @Mapper
@@ -14,3 +12,4 @@ public interface EmployeeMapper {
     void update(Employee employee);
     void delete(Long id);
 }
+	

@@ -1,6 +1,6 @@
 # Spring Boot + MyBatis CRUD API with H2 Database
 
-This project is a simple **Spring Boot** application demonstrating CRUD operations using **MyBatis** with an in-memory **H2 database**. It includes an `AppUser` model and performs a basic **join operation** example.
+This project is a simple **Spring Boot** application demonstrating CRUD operations using **MyBatis** with an in-memory **H2 database**. It includes an `AppUser`  and `Employee` model and performs a basic **join operation** example.
 
 ---
 

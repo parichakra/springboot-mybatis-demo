@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.parichakra.mybatis.model.Employee;
@@ -48,4 +49,13 @@ public class EmployeeController {
     public void delete(@PathVariable Long id) {
         employeeService.delete(id);
     }
+    
+    @GetMapping("/paged")
+    public List<Employee> getAllPaged(
+            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "size", defaultValue = "5") int size,
+            @RequestParam(name = "sort", defaultValue = "id,asc") String sort) {
+        return employeeService.getAllPaged(page, size, sort);
+    }
+
 }

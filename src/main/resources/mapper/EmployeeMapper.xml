@@ -49,4 +49,15 @@
     <delete id="delete" parameterType="long">
         DELETE FROM employees WHERE id=#{id}
     </delete>
+    
+    <select id="findAllPaged" resultMap="employeeResultMap">
+    SELECT e.id, e.name, e.role, e.salary,
+           u.id AS user_id, u.username, u.email
+    FROM employees e
+    JOIN app_users u ON e.user_id = u.id
+    <if test="sortColumn != null and sortDirection != null">
+        ORDER BY ${sortColumn} ${sortDirection}
+    </if>
+    LIMIT #{size} OFFSET #{offset}
+</select>
 </mapper>
